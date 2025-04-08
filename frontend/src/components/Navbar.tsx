@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
-import { Plane, Menu, User, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Plane, Menu, User, X, LogOut } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { doSignInWithGoogle, doSignInWithGitHub } from '../firebase/auth.js'; // Update path if needed
+import {
+  doSignInWithGoogle,
+  doSignInWithGitHub,
+  doSignOut,
+} from '../firebase/auth.js';
+import { auth } from '../firebase/firebase.js';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
 
   const toggleModal = () => setShowModal(!showModal);
@@ -27,9 +34,24 @@ export const Navbar = () => {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await doSignOut();
+    } catch (err) {
+      console.error('Logout failed:', err);
+    }
+  };
+
   const handleNavigate = (path) => {
     navigate(path);
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   return (
     <>
@@ -53,8 +75,8 @@ export const Navbar = () => {
                 Destinations
               </span>
               <span 
-              onClick={() => handleNavigate("/Experiences")}
-              className="cursor-pointer text-gray-700 hover:text-purple-600 transition-colors">
+                onClick={() => handleNavigate("/Experiences")}
+                className="cursor-pointer text-gray-700 hover:text-purple-600 transition-colors">
                 Experiences
               </span>
               <span className="cursor-pointer text-gray-700 hover:text-purple-600 transition-colors">
@@ -67,20 +89,38 @@ export const Navbar = () => {
               <button className="md:hidden p-2">
                 <Menu className="h-6 w-6 text-gray-600" />
               </button>
-              <button
-                onClick={toggleModal}
-                className="hidden md:flex items-center px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-green-900"
-              >
-                <User className="h-4 w-4 mr-2" />
-                Sign In
-              </button>
+
+              {currentUser ? (
+                <div className="flex items-center space-x-3">
+                  <img
+                    src={currentUser.photoURL}
+                    alt="User"
+                    className="h-8 w-8 rounded-full border border-gray-300"
+                  />
+                  <button
+                    onClick={handleLogout}
+                    className="flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={toggleModal}
+                  className="hidden md:flex items-center px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-green-900"
+                >
+                  <User className="h-4 w-4 mr-2" />
+                  Sign In
+                </button>
+              )}
             </div>
           </div>
         </div>
       </nav>
 
       {/* Login Modal */}
-      {showModal && (
+      {showModal && !currentUser && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
           <div className="bg-white rounded-lg shadow-lg p-8 w-80 relative">
             <button

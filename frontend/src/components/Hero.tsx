@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase/firebase.js';
 
-export const Hero =() =>{
-    const router = useNavigate(); 
+export const Hero = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currUser) => {
+      setUser(currUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handlePlanJourney = () => {
+    if (user) {
+      navigate('/dashboard');
+    } else {
+      toast.error('Please sign in first');
+    }
+  };
+
   return (
     <div className="relative bg-gradient-to-b from-purple-50 to-white">
+      <Toaster position="top-center" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -21,15 +43,22 @@ export const Hero =() =>{
               From the majestic Himalayas to the charming streets of Paris, let us craft your perfect adventure with personalized itineraries.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold flex items-center justify-center hover:bg-purple-700 transition-all">
+              <button
+                className="group px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold flex items-center justify-center hover:bg-purple-700 transition-all"
+                onClick={handlePlanJourney}
+              >
                 Plan Your Journey
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-50 transition-all"onClick={() => router("/Destination")}>
+              <button
+                className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-50 transition-all"
+                onClick={() => navigate("/Destination")}
+              >
                 Explore Destinations
               </button>
             </div>
           </div>
+
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <img 
@@ -58,4 +87,4 @@ export const Hero =() =>{
       </div>
     </div>
   );
-}
+};
