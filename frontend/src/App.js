@@ -5,6 +5,8 @@ import {Homepage} from './components/Homepage.tsx';
 import { Destinations } from './components/Destinations.tsx';
 import Experiences from './components/Experiences.tsx';
 
+import Dashboard from './components/Dashboard.tsx';
+
 
 function App() {
   return (
@@ -26,6 +28,12 @@ function App() {
           path="/Experiences"
           element={
               <Experiences/>
+          }
+        />
+        <Route
+          path="/Dashboard"
+          element={
+              <Dashboard/>
           }
         />
     </Routes>

@@ -60,9 +60,15 @@ export const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center group cursor-pointer">
-              <Plane className="h-10 w-10 text-pink-900 transition-all duration-500 group-hover:rotate-45 group-hover:scale-110 group-hover:drop-shadow-xl" />
-              <span className="ml-2 text-xl font-bold group-hover:scale-105 transition-transform">
-                PackUp<span className="text-blue-900">Pal</span>
+                    {/* Icon */}
+                    <Plane className="h-10 w-10 text-pink-900 transition-all duration-500 group-hover:rotate-45 group-hover:scale-110 group-hover:drop-shadow-[0_4px_8px_rgba(99,102,241,0.6)]" />
+            
+                    {/* Text */}
+                   <span className="ml-3 text-xl font-bold transition-transform duration-300 group-hover:scale-105">
+                <span className="bg-gradient-to-r from-pink-900 to-blue-600 text-transparent bg-clip-text">
+                  PackUp
+                </span>
+                <span className="text-blue-900">Pal</span>
               </span>
             </div>
 

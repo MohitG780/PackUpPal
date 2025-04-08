@@ -18,7 +18,7 @@ export const Hero = () => {
 
   const handlePlanJourney = () => {
     if (user) {
-      navigate('/dashboard');
+      navigate('/Dashboard');
     } else {
       toast.error('Please sign in first');
     }
