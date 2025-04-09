@@ -4,8 +4,10 @@ import { auth } from "../firebase/firebase.js"
 import { onAuthStateChanged, signOut } from "firebase/auth"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
+import { useNavigate } from "react-router-dom"
 
 function Dashboard() {
+   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("")
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -444,6 +446,7 @@ function Dashboard() {
               <div className="grid grid-cols-2 gap-4 pt-4">
                 <button
                   onClick={() => {
+                    navigate("/TravelPlanner")
                     console.log("Creating plan manually", {
                       planDestination,
                       travelCompanions,
@@ -465,6 +468,7 @@ function Dashboard() {
 
                 <button
                   onClick={() => {
+                    navigate("/TravelPlanner")
                     console.log("Creating plan with AI", {
                       planDestination,
                       travelCompanions,
