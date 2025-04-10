@@ -106,11 +106,18 @@ function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center group cursor-pointer">
-            <Plane className="h-10 w-10 text-pink-900 transition-all duration-500 group-hover:rotate-45 group-hover:scale-110 group-hover:drop-shadow-[0_4px_8px_rgba(99,102,241,0.6)]" />
-            <span className="ml-3 text-xl font-bold transition-transform duration-300 group-hover:scale-105">
-              <span className="bg-gradient-to-r from-pink-900 to-blue-600 text-transparent bg-clip-text">PackUp</span>
-              <span className="text-blue-900">Pal</span>
-            </span>
+          <Plane
+                className={`h-10 w-10 ${isDarkMode ? "text-pink-400" : "text-pink-600"} transition-all duration-500 group-hover:rotate-45 group-hover:scale-110 group-hover:drop-shadow-[0_4px_8px_rgba(236,72,153,0.6)]`}
+              />
+
+              <span className="ml-3 text-xl font-bold transition-transform duration-300 group-hover:scale-105">
+                <span
+                  className={`bg-gradient-to-r ${isDarkMode ? "from-pink-400 to-blue-400" : "from-pink-600 to-blue-600"} text-transparent bg-clip-text`}
+                >
+                  PackUp
+                </span>
+                <span className={isDarkMode ? "text-blue-400" : "text-blue-600"}>Pal</span>
+              </span>
           </div>
 
           {/* Desktop Nav */}

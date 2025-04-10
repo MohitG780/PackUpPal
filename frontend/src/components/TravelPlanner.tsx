@@ -667,7 +667,7 @@ export const TravelPlanner = () => {
                 <Wind className={`h-10 w-10 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                 <div>
                   <div className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>Wind Speed</div>
-                  <div className="font-medium   text-red-500">{weatherData.windSpeed}</div>
+                  <div className="font-medium   text-purple-400">{weatherData.windSpeed}</div>
                 </div>
               </div>
 
@@ -756,15 +756,15 @@ export const TravelPlanner = () => {
           <div className="flex justify-between items-center mb-6">
             <div>
               <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>Total Budget</p>
-              <p className="text-2xl font-bold text-blue-700">₹25,000</p>
+              <p className="text-2xl font-bold text-blue-400">₹25,000</p>
             </div>
             <div>
               <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>Spent</p>
-              <p className="text-2xl font-bold text-gray-500">₹12,350</p>
+              <p className="text-2xl font-bold text-red-400">₹12,350</p>
             </div>
             <div>
               <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>Remaining</p>
-              <p className="text-2xl font-bold text-green-600">₹12,650</p>
+              <p className="text-2xl font-bold text-green-400">₹12,650</p>
             </div>
           </div>
 
@@ -784,7 +784,7 @@ export const TravelPlanner = () => {
                   <Utensils className="h-5 w-5 text-pink-600" />
                 </div>
                 <div>
-                  <p className="font-medium  text-green-500">Food & Dining</p>
+                  <p className="font-medium  text-purple-400">Food & Dining</p>
                   <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>5 transactions</p>
                 </div>
               </div>
@@ -799,7 +799,7 @@ export const TravelPlanner = () => {
                   <Briefcase className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
-                  <p className="font-medium  text-green-500">Accommodation</p>
+                  <p className="font-medium  text-purple-400">Accommodation</p>
                   <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>2 transactions</p>
                 </div>
               </div>
@@ -814,7 +814,7 @@ export const TravelPlanner = () => {
                   <MapPin className="h-5 w-5 text-purple-600" />
                 </div>
                 <div>
-                  <p className="font-medium  text-green-500">Activities</p>
+                  <p className="font-medium  text-purple-400">Activities</p>
                   <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>3 transactions</p>
                 </div>
               </div>
@@ -1095,7 +1095,7 @@ export const TravelPlanner = () => {
               <div className="flex items-center">
                 <Share2 className={`h-5 w-5 mr-3 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                 <div>
-                  <h3 className="font-medium">Share Your Travel Plans</h3>
+                  <h3 className="font-medium text-blue-400 ">Share Your Travel Plans</h3>
                   <p className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
                     Help fellow travelers by sharing your travel plans! Your experiences could inspire and guide others
                     on their journeys.
