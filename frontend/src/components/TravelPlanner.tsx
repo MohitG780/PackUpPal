@@ -52,6 +52,8 @@ export const TravelPlanner = () => {
   const [newItemText, setNewItemText] = useState("")
   const mapRef = useRef(null)
 
+  
+
   const [places, setPlaces] = useState([
     { id: 1, name: "Solang Valley", color: "text-red-500" },
     { id: 2, name: "Rohtang Pass", color: "text-teal-500" },
@@ -871,7 +873,7 @@ export const TravelPlanner = () => {
             </div>
 
             <nav className="hidden md:flex items-center ml-8 space-x-4">
-              <button
+              <button onClick={() => navigate("/Dashboard")}
                 className={`px-4 py-2 ${isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-700 hover:bg-gray-100"} rounded-md`}
               >
                 Dashboard
