@@ -6,7 +6,7 @@ import { Destinations } from './components/Destinations.tsx';
 import Experiences from './components/Experiences.tsx';
 
 import Dashboard from './components/Dashboard.tsx';
-import TravelPlanner from './components/TravelPlanner.tsx';
+import {TravelPlanner} from './components/TravelPlanner.tsx';
 
 
 function App() {
