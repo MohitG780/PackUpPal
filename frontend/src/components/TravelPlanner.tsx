@@ -439,7 +439,7 @@ export const TravelPlanner = () => {
 
           <ol className="list-decimal pl-6 space-y-3">
             {cuisines.map((cuisine) => (
-              <li key={cuisine.id} className="text-lg">
+              <li key={cuisine.id} className="text-lg   text-blue-500">
                 <div className="flex items-center justify-between">
                   <span className={isDarkMode ? "text-gray-200" : "text-gray-900"}>{cuisine.name}</span>
                   {editMode && (
@@ -509,7 +509,7 @@ export const TravelPlanner = () => {
 
           <ol className="list-decimal pl-6 space-y-3">
             {packingItems.map((item) => (
-              <li key={item.id}>
+              <li key={item.id} className="text-lg   text-blue-500">
                 <div className="flex items-center justify-between">
                   <span className={isDarkMode ? "text-gray-200" : "text-gray-900"}>{item.name}</span>
                   {editMode && (
@@ -622,7 +622,7 @@ export const TravelPlanner = () => {
                   <Droplets className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                   <span className={isDarkMode ? "text-gray-300" : "text-gray-700"}>Humidity</span>
                 </div>
-                <span className="font-medium">{weatherData.humidity}%</span>
+                <span className="font-medium   text-blue-500">{weatherData.humidity}%</span>
               </div>
 
               <div className="flex items-center justify-between">
@@ -630,7 +630,7 @@ export const TravelPlanner = () => {
                   <Thermometer className={`h-5 w-5 ${isDarkMode ? "text-red-400" : "text-red-600"}`} />
                   <span className={isDarkMode ? "text-gray-300" : "text-gray-700"}>Max Temperature</span>
                 </div>
-                <span className="font-medium">{weatherData.maxTemp}°</span>
+                <span className="font-medium  text-blue-500">{weatherData.maxTemp}°</span>
               </div>
 
               <div className="flex items-center justify-between">
@@ -638,7 +638,7 @@ export const TravelPlanner = () => {
                   <Thermometer className={`h-5 w-5 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                   <span className={isDarkMode ? "text-gray-300" : "text-gray-700"}>Min Temperature</span>
                 </div>
-                <span className="font-medium">{weatherData.minTemp}°</span>
+                <span className="font-medium  text-blue-500">{weatherData.minTemp}°</span>
               </div>
 
               <div className="flex items-center justify-between">
@@ -646,7 +646,7 @@ export const TravelPlanner = () => {
                   <Thermometer className={`h-5 w-5 ${isDarkMode ? "text-yellow-400" : "text-yellow-600"}`} />
                   <span className={isDarkMode ? "text-gray-300" : "text-gray-700"}>Feels like</span>
                 </div>
-                <span className="font-medium">{weatherData.feelsLike}°</span>
+                <span className="font-medium  text-blue-500">{weatherData.feelsLike}°</span>
               </div>
 
               <div className="flex items-center justify-between">
@@ -654,7 +654,7 @@ export const TravelPlanner = () => {
                   <Navigation2 className={`h-5 w-5 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`} />
                   <span className={isDarkMode ? "text-gray-300" : "text-gray-700"}>Sea Level</span>
                 </div>
-                <span className="font-medium">{weatherData.seaLevel}</span>
+                <span className="font-medium  text-blue-500">{weatherData.seaLevel}</span>
               </div>
             </div>
           </div>
@@ -665,7 +665,7 @@ export const TravelPlanner = () => {
                 <Wind className={`h-10 w-10 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                 <div>
                   <div className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>Wind Speed</div>
-                  <div className="font-medium">{weatherData.windSpeed}</div>
+                  <div className="font-medium   text-red-500">{weatherData.windSpeed}</div>
                 </div>
               </div>
 
@@ -673,7 +673,7 @@ export const TravelPlanner = () => {
                 <Navigation2 className={`h-10 w-10 ${isDarkMode ? "text-blue-400" : "text-blue-600"}`} />
                 <div>
                   <div className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>Wind Direction</div>
-                  <div className="font-medium">{weatherData.windDirection}</div>
+                  <div className="font-medium   text-green-500">{weatherData.windDirection}</div>
                 </div>
               </div>
             </div>
@@ -693,7 +693,7 @@ export const TravelPlanner = () => {
                   <Eye className={`h-4 w-4 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`} />
                 </div>
               </div>
-              <div className="mt-1 text-right">{weatherData.visibility}</div>
+              <div className="mt-1 text-right   text-yellow-600">{weatherData.visibility}</div>
             </div>
           </div>
         </div>
