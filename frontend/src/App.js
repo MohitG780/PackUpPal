@@ -7,6 +7,7 @@ import Experiences from './components/Experiences.tsx';
 
 import Dashboard from './components/Dashboard.tsx';
 import {TravelPlanner} from './components/TravelPlanner.tsx';
+import Loading from './components/Loading.tsx';
 
 
 function App() {
@@ -41,6 +42,12 @@ function App() {
           path="/TravelPlanner"
           element={
               <TravelPlanner/>
+          }
+        />
+         <Route
+          path="/Loading"
+          element={
+              <Loading/>
           }
         />
     </Routes>
