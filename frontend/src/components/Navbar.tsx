@@ -85,9 +85,7 @@ export const Navbar = () => {
                 className="cursor-pointer text-gray-700 hover:text-purple-600 transition-colors">
                 Experiences
               </span>
-              <span className="cursor-pointer text-gray-700 hover:text-purple-600 transition-colors">
-                Plan Trip
-              </span>
+           
             </div>
 
             {/* Auth / Menu */}

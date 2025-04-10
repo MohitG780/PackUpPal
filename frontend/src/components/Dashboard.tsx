@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react"
 import { MapPin, Plane, Calendar, Search, Globe, Sun, Moon, LogOut, Menu, Briefcase } from "lucide-react"
 import { auth } from "../firebase/firebase.js"
