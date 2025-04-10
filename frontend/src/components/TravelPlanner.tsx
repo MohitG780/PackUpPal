@@ -739,7 +739,7 @@ export const TravelPlanner = () => {
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <DollarSign className={`h-6 w-6 ${isDarkMode ? "text-pink-400" : "text-pink-600"}`} />
-            <h1 className="text-2xl font-bold text-gray-500">Trip Budget</h1>
+            <h1 className="text-2xl font-bold text-gray-600">Trip Budget</h1>
           </div>
           <button
             className={`p-2 rounded-full ${
@@ -756,15 +756,15 @@ export const TravelPlanner = () => {
           <div className="flex justify-between items-center mb-6">
             <div>
               <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>Total Budget</p>
-              <p className="text-2xl font-bold text-blue-500">₹25,000</p>
+              <p className="text-2xl font-bold text-blue-700">₹25,000</p>
             </div>
             <div>
               <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>Spent</p>
-              <p className="text-2xl font-bold text-pink-500">₹12,350</p>
+              <p className="text-2xl font-bold text-gray-500">₹12,350</p>
             </div>
             <div>
               <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>Remaining</p>
-              <p className="text-2xl font-bold text-green-500">₹12,650</p>
+              <p className="text-2xl font-bold text-green-600">₹12,650</p>
             </div>
           </div>
 
