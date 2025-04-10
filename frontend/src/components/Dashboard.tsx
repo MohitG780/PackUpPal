@@ -128,8 +128,8 @@ function Dashboard() {
                 isDarkMode ? "text-gray-300 hover:text-purple-400" : "text-gray-600 hover:text-purple-600"
               } flex items-center space-x-1`}
             >
-              <Briefcase className="h-4 w-4" />
-              <span>My Trips</span>
+              
+
             </a>
 
             <button
