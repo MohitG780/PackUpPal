@@ -31,6 +31,7 @@ import Itinerary from "./TravelPlanner/Itinerary.tsx"
 import PackingChecklist from "./TravelPlanner/PackingList.tsx"
 import TopPlaces from "./TravelPlanner/TopPlaces.tsx"
 import Weather from "./TravelPlanner/Weather.tsx"
+import LocalCuisine from "./TravelPlanner/LocalCuisine.tsx"
 
 // Import auth functions
 import { doSignOut } from "../firebase/auth.js"
@@ -95,8 +96,8 @@ const TravelPlanner = () => {
         return <AboutPlace isDarkMode={isDarkMode} />
       case "budget":
         return <BudgetTracker isDarkMode={isDarkMode} />
-      default:
-        return <Itinerary isDarkMode={isDarkMode} />
+      case "localCuisine":
+        return <LocalCuisine isDarkMode={isDarkMode} />
     }
   }
 
