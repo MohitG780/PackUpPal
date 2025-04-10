@@ -6,8 +6,10 @@ import { Destinations } from './components/Destinations.tsx';
 import Experiences from './components/Experiences.tsx';
 
 import Dashboard from './components/Dashboard.tsx';
-import {TravelPlanner} from './components/TravelPlanner.tsx';
+import TravelPlanner from './components/TravelPlanner.tsx';
 import Loading from './components/Loading.tsx';
+import { CollaboratePage } from './components/Collaborator.tsx';
+import SettingsPage from './components/SettingPage.tsx';
 
 
 function App() {
@@ -48,6 +50,18 @@ function App() {
           path="/Loading"
           element={
               <Loading/>
+          }
+        />
+           <Route
+          path="/Collaborator"
+          element={
+              <CollaboratePage/>
+          }
+        />
+          <Route
+          path="/settings"
+          element={
+              <SettingsPage/>
           }
         />
     </Routes>
