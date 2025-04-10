@@ -224,12 +224,7 @@ function Dashboard() {
             <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"} text-lg max-w-xl`}>
               From hidden gems to iconic landmarks, create memories that last a lifetime.
             </p>
-            <div className="flex space-x-4">
-              <div className="group flex items-center gap-3 bg-gradient-to-r from-purple-500 via-indigo-600 to-blue-500 text-white px-6 py-3 rounded-2xl shadow-xl backdrop-blur-md hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-                <Plane className="h-5 w-5 drop-shadow-md transform transition-transform duration-500 group-hover:translate-x-2 group-hover:-translate-y-1" />
-                <span className="font-semibold text-sm sm:text-base">Start Planning</span>
-              </div>
-            </div>
+            
           </div>
           <div className="hidden md:block relative">
             <img
