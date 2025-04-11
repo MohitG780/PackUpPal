@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react"
 import { MapPin, Plane, Calendar, Search, Globe, Sun, Moon, LogOut, Menu, Briefcase } from "lucide-react"
 import { auth } from "../firebase/firebase.js"
@@ -6,9 +5,10 @@ import { onAuthStateChanged, signOut } from "firebase/auth"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import { useNavigate } from "react-router-dom"
+import TopPlaces from "./TravelPlanner/TopPlaces.tsx"// Import the TopPlaces component
 
 function Dashboard() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("")
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -311,6 +311,14 @@ function Dashboard() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Top Places to Visit Component */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
+        <TopPlaces 
+          isDarkMode={isDarkMode} 
+          destination={planDestination || "Manali"} // Using the current planDestination or default to "Manali"
+        />
       </div>
 
       {/* Create Plan Modal */}
